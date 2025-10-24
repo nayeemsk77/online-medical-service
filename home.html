@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Medical Service - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-body">
+
+  <header>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <h1>Online Medical Store</h1>
+    <input type="text" id="searchBar" placeholder="Search medicine..." onkeyup="searchProduct()">
+  </header>
+
+  <nav id="menu" class="hidden">
+    <ul>
+      <li onclick="showSection('store')">🏬 Store</li>
+      <li onclick="showSection('profile')">👤 Profile</li>
+      <li onclick="showSection('cart')">🛒 Cart (<span id='cartCount'>0</span>)</li>
+      <li onclick="showSection('orders')">📦 Orders</li>
+      <li onclick="logout()">🚪 Logout</li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Store Section -->
+    <section id="store" class="active-section">
+      <h2>🩺 Categories</h2>
+      <div class="category-container">
+        <div class="category" onclick="showProducts('tablets')">💊 Tablets</div>
+        <div class="category" onclick="showProducts('syrups')">🧴 Syrups</div>
+        <div class="category" onclick="showProducts('ointments')">💆 Ointments</div>
+        <div class="category" onclick="showProducts('injections')">💉 Injections</div>
+      </div>
+      <div id="products" class="products"></div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="hidden-section">
+      <h2>👤 Profile</h2>
+      <div class="profile-card">
+        <p><strong>Name:</strong> Nayeem Shaik</p>
+        <p><strong>Mobile:</strong> 9999999999</p>
+        <p><strong>Email:</strong> nayeem@example.com</p>
+      </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="hidden-section">
+      <h2>🛒 Your Cart</h2>
+      <div id="cartItems"></div>
+      <button class="order-btn" onclick="placeOrder()">Place Order</button>
+    </section>
+
+    <!-- Orders Section -->
+    <section id="orders" class="hidden-section">
+      <h2>📦 Your Orders</h2>
+      <div id="orderItems"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Online Medical Service | Designed by Nayeem</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
